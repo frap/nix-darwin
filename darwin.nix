@@ -5,41 +5,49 @@
 # List packages installed in system profile. To search by name, run:
 # $ nix-env -qaP | grep wget
 environment.systemPackages =
- [      pkgs.atuin
-        # pkgs.awscli2
-        pkgs.babashka
-        # pkgs.bashInteractive
-        pkgs.bat
-        # pkgs.clojure
-        pkgs.devenv
-        pkgs.dig
-        pkgs.eza
-        pkgs.fd
-        pkgs.fzf
-        pkgs.gh
-        pkgs.git
-        # pkgs.gnupg
-        # pkgs.gnused
-        # pkgs.granted
-        pkgs.jet
-        pkgs.jq
-        # pkgs.opentofu
-        pkgs.ripgrep
-        pkgs.rsync
-        pkgs.starship
-        pkgs.socat
-        # pkgs.tflint
-        pkgs.tlrc
-        pkgs.tree
-        # pkgs.uv
-        pkgs.zoxide
+  [ pkgs.atuin
+    pkgs.awscli2
+    pkgs.babashka
+    pkgs.bat
+    pkgs.clj-kondo
+    pkgs.cljfmt
+    pkgs.clojure
+    pkgs.clojure-lsp
+    pkgs.devenv
+    pkgs.dig
+    pkgs.eza
+    pkgs.fd
+    pkgs.fzf
+    pkgs.gh
+    pkgs.git
+    pkgs.gnupg
+    pkgs.gnused
+    pkgs.granted
+    pkgs.jet
+    pkgs.jq
+    pkgs.neil
+    pkgs.opentofu
+    pkgs.plantuml
+    pkgs.ripgrep
+    pkgs.rsync
+    pkgs.ruff
+    pkgs.starship
+    pkgs.socat
+    pkgs.temurin-bin-25
+    pkgs.tflint
+    pkgs.terraform-ls
+    pkgs.tlrc
+    pkgs.tree
+    pkgs.uv
+    pkgs.zellij
+    pkgs.zig
+    pkgs.zoxide
         ];
 
  # Auto upgrade nix package and the daemon service.
  # services.nix-daemon.enable = true;
   nix = {
     package = pkgs.nix;
-    # package = pkgs.nixVersions.nix_2_31;
     settings = {
       "extra-experimental-features" = [ "nix-command" "flakes" ];
       trusted-users = [ "@admin" ];
@@ -59,11 +67,6 @@ environment.systemPackages =
              };
           };
         };
-
-    extraOptions = ''
-        extra-platforms = aarch64-linux
-        '';
-
   };
 
   # Create /etc/zshrc that loads the nix-darwin environment.
@@ -80,9 +83,18 @@ environment.systemPackages =
  system.stateVersion = 6;
 
  # Install fonts
-  fonts.packages = [
+fonts.packages = [
+    pkgs.aporetic
     # pkgs.atkinson-hyperlegible
     pkgs.nerd-fonts.jetbrains-mono
+    pkgs.nerd-fonts.fira-code
+    pkgs.nerd-fonts.hasklug
+    pkgs.nerd-fonts.hack
+    pkgs.nerd-fonts.inconsolata  
+    pkgs.nerd-fonts.iosevka
+    pkgs.nerd-fonts.iosevka-term
+    pkgs.nerd-fonts.roboto-mono
+    pkgs.nerd-fonts.space-mono
   ];
 
   # set some OSX preferences that I always end up hunting down and changing.
