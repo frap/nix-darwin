@@ -13,6 +13,8 @@ environment.systemPackages =
     pkgs.cljfmt
     pkgs.clojure
     pkgs.clojure-lsp
+    pkgs.coreutils
+    pkgs.delta
     pkgs.devenv
     pkgs.dig
     pkgs.eza
