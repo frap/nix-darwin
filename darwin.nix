@@ -30,6 +30,7 @@ environment.systemPackages =
     pkgs.neil
     pkgs.opentofu
     pkgs.plantuml
+    pkgs.podman
     pkgs.ripgrep
     pkgs.rsync
     pkgs.ruff
