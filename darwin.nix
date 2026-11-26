@@ -5,10 +5,12 @@
 # List packages installed in system profile. To search by name, run:
 # $ nix-env -qaP | grep wget
 environment.systemPackages =
-  [ pkgs.atuin
+  [ pkgs.ansible
+    pkgs.atuin
     pkgs.awscli2
     pkgs.babashka
     pkgs.bat
+    pkgs.bbin
     pkgs.clj-kondo
     pkgs.cljfmt
     pkgs.clojure
@@ -25,12 +27,17 @@ environment.systemPackages =
     pkgs.gnupg
     pkgs.gnused
     pkgs.granted
+    pkgs.hunspell
+    pkgs.hunspellDicts.en_NZ
+    pkgs.hunspellDicts.es_ES
+    pkgs.hunspellDicts.fr-moderne
     pkgs.jet
     pkgs.jq
     pkgs.neil
     pkgs.opentofu
     pkgs.plantuml
     pkgs.podman
+    pkgs.podman-compose
     pkgs.ripgrep
     pkgs.rsync
     pkgs.ruff
@@ -39,6 +46,7 @@ environment.systemPackages =
     pkgs.temurin-bin-25
     pkgs.tflint
     pkgs.terraform-ls
+    pkgs.texliveFull
     pkgs.tlrc
     pkgs.tree
     pkgs.uv
